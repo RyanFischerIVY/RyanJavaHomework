@@ -12,6 +12,7 @@ public class cardNumberChecker {
         } else {
             System.out.println(number + " is invalid.");
         }
+        input.close(); //Added because the compiler was giving a warning
     }
     //Goes through each catagory to find if the number is valid
     public static boolean isValid(long number) {
@@ -25,7 +26,7 @@ public class cardNumberChecker {
         int sum = 0;
         String num = number + "";
         for (int i = num.length() - 2; i >= 0; i -= 2) {
-            int digit = Character.getNumericValue(num.charAt(i));
+            int digit = Character.getNumericValue(num.charAt(i)); //Turns the string version of the number back into an integer so it can be added
             sum += getDigit(digit * 2);
         }
         return sum;
