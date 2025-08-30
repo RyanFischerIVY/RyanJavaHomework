@@ -18,6 +18,6 @@ public class conversion {
     }
 
     public static double meterToFoot(double meter) {
-        return meter * 3.279;
+        return 3.279 * meter;
     }
 }
