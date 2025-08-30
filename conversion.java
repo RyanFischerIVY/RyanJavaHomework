@@ -7,8 +7,9 @@ public class conversion {
         double meter = 20.0;
         System.out.println("Feet     Meters   |   Meters   Feet");
         System.out.println("-----------------------------------");
-        for (int i = 0; i < 10; i++, foot++, meter += 5)
-            System.out.println(foot + "      " + String.format("%.3f", footToMeter(foot))  + "    |   " + meter + "     " + String.format("%.3f", meterToFoot(meter)));
+        for (int i = 0; i < 10; i++, foot++, meter += 5) {
+            System.out.printf("%-8.0f%-9.3f|   %-8.0f%-9.3f%n", foot, footToMeter(foot), meter, meterToFoot(meter));
+        }
     }
 
     public static double footToMeter(double foot) {
@@ -19,3 +20,4 @@ public class conversion {
         return meter * 3.279;
     }
 }
+//Testing
