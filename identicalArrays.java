@@ -21,7 +21,7 @@ public class identicalArrays {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 System.out.print("Enter number for row " + (i + 1) + " column " + (j + 1) + ": ");
-                m1[i][j] = input.nextInt();
+                m2[i][j] = input.nextInt();
             }
         }
 
@@ -43,11 +43,9 @@ public class identicalArrays {
                 if (m1[i][j] != m2[i][j]) {
                     return false;
                 }
-                return true;
             }
         }
         return true;
-
     }
 
 }
