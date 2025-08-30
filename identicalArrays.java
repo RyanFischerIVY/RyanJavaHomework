@@ -38,10 +38,26 @@ public class identicalArrays {
     }
 
     public static boolean equals (int[][] m1, int[][] m2) {
+        boolean found = true;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (m1[i][j] != m2[i][j]) {
+                if (!found) {
                     return false;
+                }
+                found = false;
+                for (int a = 0; a < 3; a++) {
+                    if (found) {
+                        break;
+                    }
+                    for (int b = 0; b < 3; b++) {
+                        if (m1[i][j] == m2[a][b]) {
+                            found = true;
+                            break;
+                        }
+                        else {
+                            found = false;
+                        }
+                    }
                 }
             }
         }
