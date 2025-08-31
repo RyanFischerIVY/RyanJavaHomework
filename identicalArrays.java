@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+//identicalArrays
+//Ryan Fischer
+//8/31/25
+//Professor Parrot
+//SDEV 200
+
 public class identicalArrays {
     public static void main(String[] args) {
 
