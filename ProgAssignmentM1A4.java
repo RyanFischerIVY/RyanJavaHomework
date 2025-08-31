@@ -1,6 +1,22 @@
 public class ProgAssignmentM1A4 {
-    public static void Main() {
+    public static void main(String[] args) {
+        regularPolygon polygon1 = new regularPolygon();
+        regularPolygon polygon2 = new regularPolygon(6, 4);
+        regularPolygon polygon3 = new regularPolygon(10, 4, 5.6, 7.8);
+
+        System.out.println("Polygon 1: ");
+        System.out.println("Perimeter: " + polygon1.getPerimeter());
+        System.out.println("Area: " + polygon1.getArea() + "\n");
+
+        System.out.println("Polygon 2: ");
+        System.out.println("Perimeter: " + polygon2.getPerimeter());
+        System.out.println("Area: " + polygon2.getArea() + "\n");
+
+        System.out.println("Polygon 3: ");
+        System.out.println("Perimeter: " + polygon3.getPerimeter());
+        System.out.println("Area: " + polygon3.getArea() + "\n");
         
+
         
     }
 
@@ -8,12 +24,12 @@ public class ProgAssignmentM1A4 {
 
 
     //Class for the regular polygon with all its methods
-    class regularPolygon {
+    public static class regularPolygon {
         private int n = 3;
         private double side = 1.0;
         private double x = 0.0;
         private double y = 0.0;
-        //3 contructors to serve differnt roles
+        //3 contructors to serve different roles
         public regularPolygon() {
 
         }
