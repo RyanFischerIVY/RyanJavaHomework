@@ -8,10 +8,11 @@
 
 public class ProgAssignmentM1A4 {
     public static void main(String[] args) {
+        //Creates an object for each polygon
         regularPolygon polygon1 = new regularPolygon();
         regularPolygon polygon2 = new regularPolygon(6, 4);
         regularPolygon polygon3 = new regularPolygon(10, 4, 5.6, 7.8);
-
+        //Displays the polygon number, and it's statistics
         System.out.println("Polygon 1: ");
         System.out.println("Perimeter: " + polygon1.getPerimeter());
         System.out.println("Area: " + polygon1.getArea() + "\n");
