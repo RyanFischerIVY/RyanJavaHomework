@@ -1,4 +1,10 @@
 
+//Conversion
+//Ryan Fischer
+//8/31/25
+//Professor Parrot
+//SDEV 200
+
 
 public class conversion {
     public static void main(String[] args) {
