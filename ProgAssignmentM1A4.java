@@ -1,3 +1,11 @@
+//ProgAssignmentM1A4
+//Ryan Fischer
+//8/31/25
+//Professor Parrot
+//SDEV 200
+
+
+
 public class ProgAssignmentM1A4 {
     public static void main(String[] args) {
         regularPolygon polygon1 = new regularPolygon();
