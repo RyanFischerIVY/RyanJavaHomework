@@ -49,20 +49,22 @@ public class identicalArrays {
             int count1 = 0;
             int count2 = 0;
             int value = m1[i][j];
+            //Grabs a value from m1
             for (int a = 0; a < 3; a++) {
                 for (int b = 0; b < 3; b++) {
                     if (m1[a][b] == value) count1++;
                 }
             }
+            //Compares the m1 value against every m2 value
             for (int a = 0; a < 3; a++) {
                 for (int b = 0; b < 3; b++) {
                     if (m2[a][b] == value) count2++;
                 }
             }
-            if (count1 != count2) return false;
+            if (count1 != count2) return false; //Returns false if the value isnt found
         }
     }
-    return true;
+    return true; //If the values from m1 are found in m2 than the lists are the same.
     }
 
 }
