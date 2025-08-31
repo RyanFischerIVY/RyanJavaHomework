@@ -1,6 +1,12 @@
 
 import java.util.Scanner;
 
+//cardNumberChecker
+//Ryan Fischer
+//8/31/25
+//Professor Parrot
+//SDEV 200
+
 public class cardNumberChecker {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); //Creates an object to store the input in
