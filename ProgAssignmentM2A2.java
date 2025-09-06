@@ -9,13 +9,35 @@ public class ProgAssignmentM2A2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter three sides of the triangle: ");
-        double side1 = input.nextDouble();
-        double side2 = input.nextDouble();
-        double side3 = input.nextDouble();
+        System.out.println("Enter three sides of the triangle: ");
+        double side1;
+        double side2;
+        double side3;
+
+        try {
+            side1 = input.nextDouble();
+            side2 = input.nextDouble();
+            side3 = input.nextDouble();
+        }
+        catch (Exception e) {
+            System.out.println("Invalid input. Defaulting all sides to 1.0.");
+            side1 = 1.0;
+            side2 = 1.0;
+            side3 = 1.0;
+            input.nextLine(); //Clears the invalid input
+        }
 
         System.out.print("Enter a color for your triangle: ");
-        String color = input.next();
+        String color;
+
+        try {
+            color = input.next();
+        }
+        catch (Exception e) {
+            System.out.println("Invalid input. Defaulting color to white.");
+            color = "white";
+            input.nextLine(); //Clears the invalid input
+        }
 
         boolean filled;
         System.out.print("Is the triangle filled (true/false)? ");
