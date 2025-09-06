@@ -13,7 +13,7 @@ public class ProgAssignmentM2A2 {
         double side1;
         double side2;
         double side3;
-
+        //Grabs the user input, if it fails all sides are defaulted to 1.0
         try {
             side1 = input.nextDouble();
             side2 = input.nextDouble();
@@ -24,21 +24,21 @@ public class ProgAssignmentM2A2 {
             side1 = 1.0;
             side2 = 1.0;
             side3 = 1.0;
-            input.nextLine(); //Clears the invalid input
+            input.nextLine(); //<-Clears the invalid input
         }
 
         System.out.print("Enter a color for your triangle: ");
         String color;
-
+        //Same for color
         try {
             color = input.next();
         }
         catch (Exception e) {
             System.out.println("Invalid input. Defaulting color to white.");
             color = "white";
-            input.nextLine(); //Clears the invalid input
+            input.nextLine(); //<-Clears the invalid input
         }
-
+        //Same for filled
         boolean filled;
         System.out.print("Is the triangle filled (true/false)? ");
         try {
@@ -49,7 +49,7 @@ public class ProgAssignmentM2A2 {
             filled = false;
         }
         
-
+        //Creates your triangle with the data entered
         triangleObject triangle = new triangleObject(side1, side2, side3);
         triangle.setColor(color);
         triangle.setFilled(filled);
@@ -100,7 +100,7 @@ public class ProgAssignmentM2A2 {
         public void setSide3(double side3) {
             this.side3 = side3;
         }
-
+        //Overrides for area and perimeter so they work with the triangle class
         @Override
         public double getArea() {
             double s = (side1 + side2 + side3) / 2.0;
@@ -120,7 +120,7 @@ public class ProgAssignmentM2A2 {
     }
 
 
-
+    //Orignal abstracted class that triangle is built off of
     // GeometricObject.java: The abstract GeometricObject class
     public static abstract class GeometricObject {
         private String color = "white";
