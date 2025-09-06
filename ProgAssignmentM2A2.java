@@ -3,14 +3,36 @@
 //9-6-2025
 //Professor Parrot
 
-
+import java.util.Scanner;
 
 public class ProgAssignmentM2A2 {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
+        System.out.print("Enter three sides of the triangle: ");
+        double side1 = input.nextDouble();
+        double side2 = input.nextDouble();
+        double side3 = input.nextDouble();
+
+        System.out.print("Enter a color for your triangle: ");
+        String color = input.next();
+
+        System.out.print("Is the triangle filled (true/false)? ");
+        boolean filled = input.nextBoolean();
+
+        triangleObject triangle = new triangleObject(side1, side2, side3);
+        triangle.setColor(color);
+        triangle.setFilled(filled);
+
+        System.out.println(triangle.toString());
+
+        System.out.printf("\nThe area of the triangle is %.2f\n", triangle.getArea());
+        System.out.printf("The perimeter of the triangle is %.2f\n", triangle.getPerimeter());
+
+        input.close();
     }
 
-    public class triangleObject extends GeometricObject {
+    public static class triangleObject extends GeometricObject {
         private double side1 = 1.0;
         private double side2 = 1.0;
         private double side3 = 1.0;
@@ -49,13 +71,28 @@ public class ProgAssignmentM2A2 {
             this.side3 = side3;
         }
 
-        
+        @Override
+        public double getArea() {
+            double s = (side1 + side2 + side3) / 2.0;
+            return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+        }
+
+        @Override
+        public double getPerimeter() {
+            return side1 + side2 + side3;
+        }
+
+        public String toString() {
+            return "Triangle:\n Side 1 = " + side1 + "\n Side 2 = " + side2 + "\n Side 3 = " + side3 + "\n Color = " + getColor()
+                    + "\n Filled = " + isFilled();
+        }
+
     }
 
 
 
     // GeometricObject.java: The abstract GeometricObject class
-    public abstract class GeometricObject {
+    public static abstract class GeometricObject {
         private String color = "white";
         private boolean filled;
 
