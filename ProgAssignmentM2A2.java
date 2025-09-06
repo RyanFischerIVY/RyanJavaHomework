@@ -17,8 +17,16 @@ public class ProgAssignmentM2A2 {
         System.out.print("Enter a color for your triangle: ");
         String color = input.next();
 
+        boolean filled;
         System.out.print("Is the triangle filled (true/false)? ");
-        boolean filled = input.nextBoolean();
+        try {
+            filled = input.nextBoolean();
+        }
+        catch (Exception e) {
+            System.out.println("Invalid input. Defaulting to false.");
+            filled = false;
+        }
+        
 
         triangleObject triangle = new triangleObject(side1, side2, side3);
         triangle.setColor(color);
