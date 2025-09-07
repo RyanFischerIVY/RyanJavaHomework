@@ -20,10 +20,17 @@ public class ProgAssignmentM2A3 {
         input.close();
     }
 
-    public static int bin2dec(String binaryString) throws NumberFormatException {
+    public static int bin2dec(String binaryString) throws binaryFormatException {
 
         int decimal = Integer.parseInt(binaryString, 2);
 
         return decimal;
+    }
+
+    public class binaryFormatException extends Exception {
+        public binaryFormatException(String message) {
+            super(message);
+
+        }
     }
 }
