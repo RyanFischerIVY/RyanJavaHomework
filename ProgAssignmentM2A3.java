@@ -12,7 +12,7 @@ public class ProgAssignmentM2A3 {
         int decimal = bin2dec(binaryString);
         System.out.println("The converted decimal number is: " + decimal);
         } 
-        catch (NumberFormatException e) {
+        catch (BinaryFormatException e) {
         System.out.println("Invalid binary string.");
         }
 
@@ -20,15 +20,20 @@ public class ProgAssignmentM2A3 {
         input.close();
     }
 
-    public static int bin2dec(String binaryString) throws binaryFormatException {
+        public static int bin2dec(String binaryString) throws BinaryFormatException {
+            // Manual validation
+            for (char c : binaryString.toCharArray()) {
+                if (c != '0' && c != '1') {
+                    throw new BinaryFormatException("Not a binary string: " + binaryString);
+                }
+            }
 
-        int decimal = Integer.parseInt(binaryString, 2);
+            // Safe conversion
+            return Integer.parseInt(binaryString, 2);
+        }
 
-        return decimal;
-    }
-
-    public class binaryFormatException extends Exception {
-        public binaryFormatException(String message) {
+    public class BinaryFormatException extends Exception {
+        public BinaryFormatException(String message) {
             super(message);
 
         }
