@@ -51,31 +51,31 @@ public class ProgAssignmentM3A2 {
 
         /** Add a rational number to this rational */
         public Rational add(Rational secondRational) {
-            long n = numerator * secondRational.getDenominator() +
-            denominator * secondRational.getNumerator();
-            long d = denominator * secondRational.getDenominator();
-            return new Rational(n, d);
+                BigInteger n = numerator.multiply(secondRational.denominator)
+                .add(denominator.multiply(secondRational.numerator));
+                BigInteger d = denominator.multiply(secondRational.denominator);
+                return new Rational(n, d);
         }
 
         /** Subtract a rational number from this rational */
         public Rational subtract(Rational secondRational) {
-            long n = numerator * secondRational.getDenominator()
-            - denominator * secondRational.getNumerator();
-            long d = denominator * secondRational.getDenominator();
+            BigInteger n = numerator.multiply(secondRational.denominator)
+            .subtract(denominator.multiply(secondRational.numerator));
+            BigInteger d = denominator.multiply(secondRational.denominator);
             return new Rational(n, d);
         }
 
         /** Multiply a rational number by this rational */
         public Rational multiply(Rational secondRational) {
-            long n = numerator * secondRational.getNumerator();
-            long d = denominator * secondRational.getDenominator();
+            BigInteger n = numerator.multiply(secondRational.numerator);
+            BigInteger d = denominator.multiply(secondRational.denominator);
             return new Rational(n, d);
         }
 
         /** Divide a rational number by this rational */
         public Rational divide(Rational secondRational) {
-            long n = numerator * secondRational.getDenominator();
-            long d = denominator * secondRational.numerator;
+            BigInteger n = numerator.multiply(secondRational.denominator);
+            BigInteger d = denominator.multiply(secondRational.numerator);
             return new Rational(n, d);
         }
 
