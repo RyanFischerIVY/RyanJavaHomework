@@ -81,7 +81,7 @@ public class ProgAssignmentM3A2 {
 
         @Override
         public String toString() {
-            if (denominator == 1)
+            if (denominator == BigInteger.ONE)
             return numerator + "";
             else
             return numerator + "/" + denominator;
@@ -107,7 +107,7 @@ public class ProgAssignmentM3A2 {
 
         @Override // Implement the doubleValue method in Number
         public double doubleValue() {
-            return numerator *  1.0 / denominator;
+            return numerator.doubleValue() / denominator.doubleValue();
         }
 
         @Override // Implement the abstract longValue method in Number
@@ -117,12 +117,9 @@ public class ProgAssignmentM3A2 {
 
         @Override // Implement the compareTo method in Comparable
         public int compareTo(Rational o) {
-            if (this.subtract(o).getNumerator() > 0)
-            return 1;
-            else if (this.subtract(o).getNumerator() < 0)
-            return -1;
-            else
-            return 0;
+            BigInteger n1 = numerator.multiply(o.getDenominator());
+            BigInteger n2 = denominator.multiply(o.getNumerator());
+            return n1.compareTo(n2);
         }
     }
 
