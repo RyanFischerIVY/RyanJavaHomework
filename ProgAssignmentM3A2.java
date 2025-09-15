@@ -22,6 +22,8 @@ public class ProgAssignmentM3A2 {
         System.out.println(r1 + " * " + r2 + " = " + r1.multiply(r2));
         System.out.println(r1 + " / " + r2 + " = " + r1.divide(r2));
         System.out.println(r2 + " is " + r2.doubleValue());
+
+        input.close();
     }
 
 
@@ -38,8 +40,10 @@ public class ProgAssignmentM3A2 {
         /** Construct a rational with specified numerator and denominator */
         public Rational(BigInteger numerator, BigInteger denominator) {
             BigInteger gcd = numerator.gcd(denominator);
-            this.numerator = (denominator > 0 ? 1 : -1) * numerator / gcd;
-            this.denominator = Math.abs(denominator) / gcd;
+            BigInteger sign = denominator.signum() > 0 ? BigInteger.ONE : BigInteger.valueOf(-1);
+
+            this.numerator = numerator.multiply(sign).divide(gcd);
+            this.denominator = denominator.abs().divide(gcd);
         }
 
         /** Find GCD of two numbers */
@@ -106,10 +110,9 @@ public class ProgAssignmentM3A2 {
 
         @Override // Override the equals method in the Object class
         public boolean equals(Object other) {
-            if ((this.subtract((Rational)(other))).getNumerator() == 0)
-            return true;
-            else
-            return false;
+            if (!(other instanceof Rational)) return false;
+        Rational o = (Rational) other;
+        return numerator.equals(o.numerator) && denominator.equals(o.denominator);
         }
 
         @Override // Implement the abstract intValue method in Number
