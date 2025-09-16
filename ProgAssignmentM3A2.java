@@ -6,7 +6,7 @@ public class ProgAssignmentM3A2 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
+        //Takes in the input
         System.out.print("Enter the first rational number: ");
         BigInteger n1 = input.nextBigInteger();
         BigInteger d1 = input.nextBigInteger();
@@ -16,7 +16,7 @@ public class ProgAssignmentM3A2 {
         BigInteger n2 = input.nextBigInteger();
         BigInteger d2 = input.nextBigInteger();
         Rational r2 = new Rational(n2, d2);
-
+        //does all the operations to the inputs
         System.out.println(r1 + " + " + r2 + " = " + r1.add(r2));
         System.out.println(r1 + " - " + r2 + " = " + r1.subtract(r2));
         System.out.println(r1 + " * " + r2 + " = " + r1.multiply(r2));
