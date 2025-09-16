@@ -7,7 +7,7 @@ public class ProgAssignmentM3A2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter th first rational number: ");
+        System.out.print("Enter the first rational number: ");
         BigInteger n1 = input.nextBigInteger();
         BigInteger d1 = input.nextBigInteger();
         Rational r1 = new Rational(n1, d1);
@@ -27,7 +27,7 @@ public class ProgAssignmentM3A2 {
     }
 
 
-    public class Rational extends Number implements Comparable<Rational> {
+    public static class Rational extends Number implements Comparable<Rational> {
         // Data fields for numerator and denominator
         private BigInteger numerator = BigInteger.ZERO;
         private BigInteger denominator = BigInteger.ONE;
