@@ -42,7 +42,13 @@ public class ProgAssignmentM4A2 {
 
     while (input.hasNext()) {
       String word = input.next();
-      if (keywordSet.contains(word))
+      if (word == ("/*" || word == "//")) {
+        while (word != ("*/" || "\n")) {
+          word = input.next();
+        }
+        continue;
+      }
+        if (keywordSet.contains(word))
         count++;
     }
 

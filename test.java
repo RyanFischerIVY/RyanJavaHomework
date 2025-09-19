@@ -7,7 +7,7 @@ public class test {
     public static void main(String[] args) {
         /*Collection<Integer> numList = new ArrayList<>();
         numList.add(1);
-        numList.add(2);
+        numList.add(2); import
 
     for (String) {
         
