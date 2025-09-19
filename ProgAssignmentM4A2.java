@@ -21,6 +21,7 @@ public class ProgAssignmentM4A2 {
   }
 
   public static int countKeywords(File file) throws Exception {
+    //Contains all of our key words
     String[] keywordString = {"abstract", "assert", "boolean",
         "break", "byte", "case", "catch", "char", "class", "const",
         "continue", "default", "do", "double", "else", "enum",
@@ -31,12 +32,12 @@ public class ProgAssignmentM4A2 {
         "strictfp", "super", "switch", "synchronized", "this",
         "throw", "throws", "transient", "try", "void", "volatile",
         "while", "true", "false", "null"};
-
+    //puts them in a hashset for easier finding
     Set<String> keywordSet = new HashSet<>(Arrays.asList(keywordString));
     int count = 0;
 
     Scanner input = new Scanner(file);
-    boolean inBlockComment = false;
+    boolean inBlockComment = false; //Checks if we are in a block
 
     while (input.hasNextLine()) {
       String line = input.nextLine();
@@ -69,7 +70,7 @@ public class ProgAssignmentM4A2 {
       }
 
       line = line.replaceAll("\"(\\\\.|[^\"\\\\])*\"", " ");
-      
+      //adds quotes around the words so it can be recognized by the hashset
       String[] tokens = line.split("\\W+");
       for (String token : tokens) {
         if (keywordSet.contains(token)) {
