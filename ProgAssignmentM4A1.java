@@ -34,10 +34,13 @@ public class ProgAssignmentM4A1 {
                                 return;
                             }
                             char top = stack.pop(); //Removes the symbol if the mathching pair is found
+                            if (!matches(top, ch)) {
+                            System.out.println("Symbols are mismatched");
+                            return;
 
                         }
                     }
-                }
+                };
                 input.close();
                 //Ending statments for whether or not the symbols are placed correctly
                 if(stack.isEmpty()) {
@@ -47,6 +50,7 @@ public class ProgAssignmentM4A1 {
                     System.out.println("Input is invalid, missing closing symbol");
                 }
         }
+    }
         catch (Exception e) {
             System.out.println("File not found, exiting program.");
             return;
@@ -54,5 +58,11 @@ public class ProgAssignmentM4A1 {
 
 
     }
+
+    public static boolean matches(char open, char close) {
+            return (open == '(' && close == ')') ||
+                     (open == '{' && close == '}') ||
+                     (open == '[' && close == ']');
+        }
     
 }
