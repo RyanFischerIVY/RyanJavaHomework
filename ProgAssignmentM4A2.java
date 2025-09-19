@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.io.*;
 
@@ -7,22 +8,19 @@ public class ProgAssignmentM4A2 {
     System.out.print("Enter a Java source file: ");
     String filename = input.nextLine();
 
-
     File file = new File(filename);
 
-    int keyWords = countKeywords(file);
-
     if (file.exists()) {
+      int keyWords = countKeywords(file);
       System.out.println("The number of keywords in " + filename
         + " is " + keyWords);
-    }
-    else {
+    } else {
       System.out.println("File " + filename + " does not exist");
     }
+    input.close();
   }
 
   public static int countKeywords(File file) throws Exception {
-    // Array of all Java keywords + true, false and null
     String[] keywordString = {"abstract", "assert", "boolean",
         "break", "byte", "case", "catch", "char", "class", "const",
         "continue", "default", "do", "double", "else", "enum",
@@ -34,25 +32,53 @@ public class ProgAssignmentM4A2 {
         "throw", "throws", "transient", "try", "void", "volatile",
         "while", "true", "false", "null"};
 
-    Set<String> keywordSet =
-      new HashSet<>(Arrays.asList(keywordString));
+    Set<String> keywordSet = new HashSet<>(Arrays.asList(keywordString));
     int count = 0;
 
     Scanner input = new Scanner(file);
+    boolean inBlockComment = false;
 
-    while (input.hasNext()) {
-      String word = input.next();
-      if (word == ("/*" || word == "//")) {
-        while (word != ("*/" || "\n")) {
-          word = input.next();
-        }
-        continue;
+    while (input.hasNextLine()) {
+      String line = input.nextLine();
+
+      
+      int lineCommentIndex = line.indexOf("//");
+      if (lineCommentIndex != -1) {
+        line = line.substring(0, lineCommentIndex);
       }
-        if (keywordSet.contains(word))
-        count++;
+
+      if (inBlockComment) {
+        int endIndex = line.indexOf("*/");
+        if (endIndex != -1) {
+          line = line.substring(endIndex + 2);
+          inBlockComment = false;
+        } else {
+          continue; 
+        }
+      }
+      while (line.contains("/*")) {
+        int start = line.indexOf("/*");
+        int end = line.indexOf("*/", start + 2);
+        if (end != -1) {
+          line = line.substring(0, start) + line.substring(end + 2);
+        } else {
+          line = line.substring(0, start);
+          inBlockComment = true;
+          break;
+        }
+      }
+
+      line = line.replaceAll("\"(\\\\.|[^\"\\\\])*\"", " ");
+      
+      String[] tokens = line.split("\\W+");
+      for (String token : tokens) {
+        if (keywordSet.contains(token)) {
+          count++;
+        }
+      }
     }
 
+    input.close();
     return count;
   }
 }
-
