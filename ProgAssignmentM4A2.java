@@ -7,10 +7,14 @@ public class ProgAssignmentM4A2 {
     System.out.print("Enter a Java source file: ");
     String filename = input.nextLine();
 
+
     File file = new File(filename);
+
+    int keyWords = countKeywords(file);
+
     if (file.exists()) {
       System.out.println("The number of keywords in " + filename
-        + " is " + countKeywords(file));
+        + " is " + keyWords);
     }
     else {
       System.out.println("File " + filename + " does not exist");
