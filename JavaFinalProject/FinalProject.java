@@ -22,6 +22,13 @@ public class FinalProject {
                 Character player = new Mage(pName, 10, 10, 10, 10, 10);
                 break;
         }
+        System.out.println("Your Character Info:");
+        player.toString();
+
+        System.out.println("You arrive to the land ready for adventure!\nYou settle in a small town");
+        while (true) {
+            System.out.println("What will you do?\n1. Battle Monsters\n2. Quest\n3. Stats\n4. Shop\n5. Quit Game");
+        }
         
 
 
