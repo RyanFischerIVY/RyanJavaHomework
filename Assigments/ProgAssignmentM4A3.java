@@ -89,7 +89,7 @@ public class ProgAssignmentM4A3 {
             Node<E> temp = head;
             head = head.next;
             if (head != null) {
-                head.next = null;
+                head.previous = null;
             }
             else {
                 tail = null;
@@ -120,7 +120,6 @@ public class ProgAssignmentM4A3 {
                 
             }
             if (index == size - 1) {
-                removeLast();
                 return removeLast();
             }
             
