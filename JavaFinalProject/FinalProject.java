@@ -1,6 +1,31 @@
 package JavaFinalProject;
+import java.util.Scanner;
 
 public class FinalProject {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("What class would you like?\n1. Warrior\n2. Mage\n=>");
+        int choice = -1;
+        choice = input.nextInt();
+        input.nextLine();
+
+        System.out.print("What is your characters name?\n=>");
+        String pName;
+        pName = input.nextLine();
+
+        switch (choice) {
+            case 1:
+                Character player = new Warrior(pName, 10, 10, 10, 10, 10);
+                break;
+            case 2:
+                Character player = new Mage(pName, 10, 10, 10, 10, 10);
+                break;
+        }
+        
+
+
+    }
 
 
     public abstract class Character {
@@ -77,6 +102,13 @@ public class FinalProject {
             //Implement
             return intelligence;
         }
+
+    }
+
+    public void battle() {
+        //Battle begins
+
+        System.out.println("|Enemy Name Here| Approaches! \n1. Attack\n2.Item\n3. Flee\n=>");
 
     }
 }
