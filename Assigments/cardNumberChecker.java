@@ -1,5 +1,7 @@
+package Assigments;
 
 import java.util.Scanner;
+
 
 //cardNumberChecker
 //Ryan Fischer

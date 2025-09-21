@@ -1,3 +1,4 @@
+package Assigments;
 import java.util.*;
 
 public class ProgAssignmentM4A3 {
@@ -115,12 +116,12 @@ public class ProgAssignmentM4A3 {
         public E remove(int index) {
             if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
             if (index == 0) {
-                removeFirst();
-                return;
+                return removeFirst();
+                
             }
             if (index == size - 1) {
                 removeLast();
-                return;
+                return removeLast();
             }
             
             Node<E> current = getNode(index);
@@ -242,6 +243,20 @@ public class ProgAssignmentM4A3 {
             }
             sb.append("]");
             return sb.toString();
+        }
+
+        @Override
+        public boolean contains(Object o) {
+            for (Node<E> cur = head; cur != null; cur = cur.next) {
+                if (Objects.equals(cur.element, o)) return true;
+            }
+            return false;
+        }
+
+        @Override
+        public void clear() {
+            head = tail = null;
+            size = 0;
         }
 
 

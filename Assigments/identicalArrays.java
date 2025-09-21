@@ -1,3 +1,4 @@
+package Assigments;
 import java.util.Scanner;
 
 //identicalArrays

@@ -1,3 +1,4 @@
+package Assigments;
 //ProgAssignmentM1A4
 //Ryan Fischer
 //8/31/25
@@ -11,7 +12,8 @@ public class ProgAssignmentM1A4 {
         //Creates an object for each polygon
         regularPolygon polygon1 = new regularPolygon();
         regularPolygon polygon2 = new regularPolygon(6, 4);
-        regularPolygon polygon3 = new regularPolygon(10, 4, 5.6, 7.8);
+        regularPolygon polygon3 = new regularPolygon(10, 4
+        , 5.6, 7.8);
         //Displays the polygon number, and it's statistics
         System.out.println("Polygon 1: ");
         System.out.println("Perimeter: " + polygon1.getPerimeter());
