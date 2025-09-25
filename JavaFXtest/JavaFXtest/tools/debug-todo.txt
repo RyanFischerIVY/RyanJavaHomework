@@ -1,0 +1,4 @@
+1) Inspect MultipleBounce.java to find image-loading code
+2) Explain why remote image URL fails
+3) Provide corrected code examples: direct remote URL, background loading with error check, and local resource approach
+4) Give quick troubleshooting steps (proxy, offline, JavaFX errors)

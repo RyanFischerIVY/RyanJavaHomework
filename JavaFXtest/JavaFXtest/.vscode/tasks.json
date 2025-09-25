@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "javac: compile MultipleBounce",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "-d",
+        "${workspaceFolder}\\bin",
+        "-cp",
+        "${workspaceFolder}\\lib\\*",
+        "${workspaceFolder}\\src\\MultipleBounce.java"
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$javac"],
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" }
+    }
+  ]
+}

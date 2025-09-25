@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run MultipleBounce",
+      "request": "launch",
+      "mainClass": "MultipleBounce",
+      "preLaunchTask": "javac: compile MultipleBounce",
+      "vmArgs": "--module-path C:\\Users\\rfisc\\Documents\\JavaFXStuff\\javafx-sdk-17.0.16\\lib --add-modules javafx.controls,javafx.fxml"
+    }
+  ]
+}
