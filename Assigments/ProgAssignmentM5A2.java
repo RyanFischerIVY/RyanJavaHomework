@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -8,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 
 //Reminder that the circle starts as white so it isnt visible at first
-public class MultipleBounce extends Application {
+public class ProgAssignmentM5A2 extends Application {
 
     private Circle circle = new Circle(60);
 
@@ -37,5 +35,3 @@ public class MultipleBounce extends Application {
     primaryStage.show();
   }
 }
-
-
