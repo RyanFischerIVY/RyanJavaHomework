@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -17,7 +15,7 @@ import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 
 
-public class MultipleBounce extends Application {
+public class ProgAssignmentM5A3 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
@@ -92,5 +90,3 @@ public class MultipleBounce extends Application {
 
    }
 }
-
-
