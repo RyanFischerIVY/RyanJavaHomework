@@ -20,7 +20,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 
 
-public class MultipleBounce extends Application {
+public class FinalProectGUI extends Application {
 
     
     private Pane centerPane;
