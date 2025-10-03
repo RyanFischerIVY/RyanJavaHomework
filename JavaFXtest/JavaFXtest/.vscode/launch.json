@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "JavaFXtest_df2b21bb"
+    },
+    {
+      "type": "java",
       "name": "Run MultipleBounce",
       "request": "launch",
       "mainClass": "MultipleBounce",

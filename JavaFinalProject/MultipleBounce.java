@@ -1,5 +1,4 @@
 
-
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -113,5 +112,3 @@ public class MultipleBounce extends Application {
     }
 
 }
-
-
