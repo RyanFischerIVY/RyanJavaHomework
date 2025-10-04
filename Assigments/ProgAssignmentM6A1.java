@@ -5,7 +5,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import java.sql.*;
 
-public class MultipleBounce extends Application {
+public class ProgAssignmentM6A1 extends Application {
     private TextField tfId = new TextField();
     private TextField tfLastName = new TextField();
     private TextField tfFirstName = new TextField();
@@ -125,7 +125,3 @@ public class MultipleBounce extends Application {
         launch(args);
     }
 }
-
-
-
-
